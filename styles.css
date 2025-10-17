@@ -103,3 +103,27 @@ img {
     border-radius: 3px;
     font-weight: bold;
 }
+#sidebar {
+    background-color: #000000;
+    width: 200px;
+    line-height: 2.25em;
+    border: 2px solid rgb(134, 134, 134);
+    color: white;
+    float: right;
+    margin: 20px;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+#sidebar h3 {
+    text-align: center;
+    padding: 10px;
+    margin: 5px auto;
+    border-left: none;
+    border-radius: 0;
+    background-color: rgb(226, 226, 226);
+    border: 1px dotted black;
+}
+
+li {
+    font-style: italic;
+}
