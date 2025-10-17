@@ -6,7 +6,7 @@ body{
     padding: 0;
 }
 #container {
-    width: 800px;
+    width: 1000px;
     margin: 20px auto;
     background: linear-gradient(135deg, #e6e6fa 0%, #b8c6e6 100%);
     padding: 40px;
@@ -112,7 +112,7 @@ img {
     float: right;
     margin: 20px;
     margin-top: 100px;
-    margin-right: 50px;
+    margin-right: 100px;
 }
 #sidebar h3 {
     text-align: center;
@@ -126,4 +126,34 @@ img {
 
 li {
     font-style: italic;
+}
+
+ul {
+    list-style-type: square;
+}
+
+@media (max-width: 1200px) {
+    #container {
+        width: 900px;
+    }
+}
+@media (max-width: 992px) {
+    #container {
+        width: 100%;
+    }
+    body, p, #container {
+        margin: 0px;
+        border: none;
+        padding: 0;
+    }
+    p {
+        padding: 20px;
+    }
+}
+@media (max-width: 768px) {
+    #sidebar {
+        float: none;
+        width: 90%;
+        margin: 20px auto;
+    }
 }
