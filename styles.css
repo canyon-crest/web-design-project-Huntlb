@@ -1,4 +1,6 @@
 body{
+    /* Linear gradient: https://www.w3schools.com/css/css3_gradients.asp*/
+
     background: linear-gradient(135deg, #4b4b9b 0%, #49505e 100%);
     color: #232946;
     font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif;
@@ -8,6 +10,7 @@ body{
 #container {
     width: 1000px;
     margin: 20px auto;
+    /* Linear gradient: https://www.w3schools.com/css/css3_gradients.asp*/
     background: linear-gradient(135deg, #e6e6fa 0%, #b8c6e6 100%);
     padding: 40px;
     border-left: 5px double black;
@@ -46,6 +49,37 @@ h1 {
     border-radius: 30px;
     box-shadow: 0 4px 16px rgba(35,41,70,0.08);
 }
+
+/* Rain-in bounce animation for h1 */
+@keyframes rain-in {
+    0% {
+        transform: translateY(-40px) scaleY(0.98);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(6px) scaleY(1.02);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-4px) scaleY(0.995);
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    animation: rain-in 900ms cubic-bezier(.2,.8,.25,1) both;
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    h1 {
+        animation: none !important;
+        transition: none !important;
+    }
+}
 h2{
     text-align:center;
     font-style: italic;
@@ -83,6 +117,23 @@ img {
     border-radius: 15px;
     box-shadow: 0 2px 12px rgba(35,41,70,0.10);
 
+}
+
+/* Image hover zoom - https://www.w3schools.com/howto/howto_css_zoom_hover.asp*/
+/* Cubic bezier transition - https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/cubic-bezier*/
+.img-zoom, img:hover, img:focus {
+    transition: transform 280ms cubic-bezier(.2,.8,.2,1), box-shadow 240ms;
+    transform-origin: center center;
+}
+
+img:hover, img:focus {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(35,41,70,0.14);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    img, .img-zoom { transition: none !important; transform: none !important; }
 }
 #pic2{ 
     float: right; 
